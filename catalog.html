@@ -8,14 +8,13 @@
 	<body>
 
 		<header>
-			<img src="//placehold.it/160x65" alt="Нёрдс" class="logo">
+			<img src="img/nerds-logo.png" alt="Нёрдс" class="logo" width="160" height="65">
 			<nav>
 				<ul>
 					<li><a href="#">Студия</a></li>
 					<li><a href="#">Клиенты</a></li>
 					<li><a href="#">Магазин</a></li>
 					<li><a href="#">Контакты</a></li>
-					
 				</ul>
 				<div class="user-cart"><a href="#">Корзина</a></div>
 			</nav>
@@ -28,16 +27,26 @@
 		<main class="catalog">
 			<aside class="catalog-left">
 				<form action="post.php" method="get">
-					<label for="">
-						Стоимость
-					</label>
-					<span>От</span><input type="number">
-					<span>До</span><input type="number">
-					<label for="grid">Сетка:</label>
+					<fieldset class="range-filter">	
+						<legend>Стоимость</legend>
+							<div class="range-controls">
+								<div class="scale"><div style="margin-left:50px;width:100px;" class="bar"></div></div>
+								<div class="toggle min-toggle"></div>
+								<div class="toggle max-toggle"></div>
+							</div>
+							<div class="price-controls">
+								от <input class="min-price" type="text" value="5 000">
+								до <input class="max-price" type="text" value="15 000">
+			       			</div>
+					</fieldset>
+					<fieldset>
+					<legend>Сетка:</legend>
 						<label><input type="radio" name="grid">Адаптивная</label>
 						<label><input type="radio" name="grid" id="grid">Фиксированая</label>
 						<label><input type="radio" name="grid">Резиновая</label>
-					<label for="slider">Особенности:</label>
+					</fieldset>
+					<fieldset>
+						<legend>Особенности:</legend>
 						<label><input type="checkbox" id="slider">Слайдер</label>
 						<label><input type="checkbox">Блок преимуществ</label>
 						<label><input type="checkbox">Новости</label>
@@ -54,12 +63,34 @@
 						<li><a href="#">По типу</a></li>
 						<li><a href="#">По названию</a></li>
 						<li><a href="#">dw</a></li>
-						<li><a href="#">up</a></li>
+						<li><a class="up" href="#">up</a></li>
 					</ul>
 				</div>
-				<div class="catalog-list">
-					<div class="catalog-block"></div>
-				</div>
+				<section class="catalog-list">
+					<div class="item">
+						<img src="img/project/img-sedona.jpg" alt="Sedona template" width="360" height="576">
+						<div class="item-info">
+							<h2 class="item-title">Sedona</h2>
+							<p class="item-desc">Информационный сайт для туристов</p>
+							<a href="#" class="btn">9 900 руб.</a>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="img/project/img-pink.jpg" alt="Pink template">
+						<div class="item-info">
+							<h2 class="item-title">Pink</h2>
+							<p class="item-desc">Информационный сайт для мобилок</p>
+							<a href="#" class="btn">7 800 руб.</a>
+						</div>
+					</div>
+				</section>
+				<ul>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">Следующая</a></li>
+				</ul>
 			</div>
 		</main>
 
@@ -81,9 +112,9 @@
 		<footer class="social">
 			<div class="social-item">
 				<ul>
-					<li><a href="#">vk</a></li>
-					<li><a href="#">f</a></li>
-					<li><a href="#">inst</a></li>
+					<li><a href="#"><img src="img/social/vk-icon.gif" alt="VK"></a></li>
+					<li><a href="#"><img src="img/social/fb-icon.gif" alt="Facebook"></a></li>
+					<li><a href="#"><img src="img/social/insta-icon.gif" alt="Instagram"></a></li>
 				</ul>
 			</div>
 

@@ -12,6 +12,23 @@
 =            general            =
 ===============================*/
 
+@font-face {
+	font-family: 'roboto';
+	src: url('../fonts/roboto.woff') format('woff'),
+		 url('../fonts/roboto.woff2') format('woff2');
+	font-style: normal;
+	font-weight: normal;
+}
 
+* {
+	font-family: "roboto", fantasy;
+	color: #000000;
+}
+
+h1 {
+	font-size: 55px;
+	line-height: 55px;
+	font-weight: bold;
+}
 
 /*=====  End of general  ======*/
