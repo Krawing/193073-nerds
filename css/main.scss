@@ -17,8 +17,10 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 	font-family: "roboto";
 	font-style: normal;
 
-	src: url("../fonts/roboto.woff") format("woff"),
-		   url("../fonts/roboto.woff2") format("woff2");
+	src:  local("Roboto regular"),
+        url("../fonts/roboto.woff2") format("woff2"),
+        url("../fonts/roboto.woff") format("woff");
+  unicode-range: U+0020-007E, U+0410-044F;
 }
 
 * {
@@ -103,15 +105,22 @@ h1 {
   }
 
   ul {
+    display: -webkit-flex;
+    display:    -moz-flex;
+    display:     -ms-flex;
+    display:      -o-flex;
+    display:         flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    width: 840px;
     margin: 0;
     padding: 0;
-
-    font-size: 0;
+    padding-left: 50px;
   }
 
+
   li {
-    display: inline-block;
-    margin-right: 50px;
+    list-style: none;
   }
 
   a {
@@ -526,6 +535,20 @@ h1 {
 }
 
 /*=====  End of clients  ======*/
+
+
+/*===========================
+=            map            =
+===========================*/
+
+.map {
+  min-height: 320px;
+  background-color: #333;
+}
+
+/*=====  End of map  ======*/
+
+
 
 
 /*==============================
