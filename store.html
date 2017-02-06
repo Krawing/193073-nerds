@@ -31,7 +31,7 @@
 				<aside class="catalog-left">
 					<form action="post.php" method="get">
 						<fieldset class="range-filter">	
-							<legend>Стоимость</legend>
+							<legend>Стоимость:</legend>
 								<div class="range-controls">
 									<div class="scale"><div style="margin-left:50px;width:100px;" class="bar"></div></div>
 									<div class="toggle min-toggle"></div>
@@ -44,17 +44,17 @@
 						</fieldset>
 						<fieldset>
 						<legend>Сетка:</legend>
-							<input type="radio" name="grid"><label>Адаптивная</label>
-							<input type="radio" name="grid" id="grid"><label>Фиксированая</label>
-							<input type="radio" name="grid"><label>Резиновая</label>
+							<p><input type="radio" name="grid" id="adaptive"><label for="adaptive">Адаптивная</label></p>
+							<p><input type="radio" name="grid" id="grid"><label for="grid">Фиксированая</label></p>
+							<p><input type="radio" name="grid" id="rubber"><label for="rubber">Резиновая</label></p>
 						</fieldset>
 						<fieldset>
 							<legend>Особенности:</legend>
-							<input type="checkbox" id="slider"><label for="slider">Слайдер</label>
-							<input type="checkbox" id="block"><label for="block">Блок преимуществ</label>
-							<input type="checkbox"><label for="">Новости</label>
-							<input type="checkbox"><label for="">Галерея</label>
-							<input type="checkbox"<label for="">Корзина</label>
+							<p><input type="checkbox" id="slider"><label for="slider">Слайдер</label></p>
+							<p><input type="checkbox" id="block"><label for="block">Блок преимуществ</label></p>
+							<p><input type="checkbox" id="add-news"><label for="add-news">Новости</label></p>
+							<p><input type="checkbox" id="add-gallery"><label for="add-gallery">Галерея</label></p>
+							<p><input type="checkbox" id="add-cart"><label for="add-cart">Корзина</label></p>
 						<input type="submit" value="Показать">
 					</form>
 				</aside>
@@ -65,8 +65,8 @@
 							<li><a href="#">По цене</a></li>
 							<li><a href="#">По типу</a></li>
 							<li><a href="#">По названию</a></li>
-							<li><a href="#">dw</a></li>
-							<li><a class="up" href="#">up</a></li>
+							<li><a class="sort-dw" href="#">dw</a></li>
+							<li><a class="sort-up" href="#">up</a></li>
 						</ul>
 					</div>
 					<section class="catalog-list">
@@ -117,18 +117,22 @@
 		</main>
 
 		<section class="map">
-			<div class="map-block">
-				<h2>NЁRDS DESIGN STUDIO</h2>
-				<p>
-					191186, Санкт-Петербург, <br>
-					ул. Б. Конюшенная, д. 19/8 <br>
-				</p>
-				<p>
-					тел. +7 (812) 275-75-75 
-				</p>
-				<a href="#" class="btn">Напишите нам</a>
+			<div class="wrapper">
+				<div class="map-block">
+					<h2>NЁRDS DESIGN STUDIO</h2>
+					<p>
+						191186, Санкт-Петербург, <br>
+						ул. Б. Конюшенная, д. 19/8 <br>
+					</p>
+					<p>
+						тел. +7 (812) 275-75-75 
+					</p>
+					<a href="#" class="btn">Напишите нам</a>
+				</div>
 			</div>
-			<div class="map-image"></div>
+			<div class="map-image">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=P-qXw-Vgue8Lvc11tmd2U2htPeoHpVGw&amp;width=100%25&amp;height=415&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false"></script>
+			</div>
 		</section>
 
 		<footer class="footer">
@@ -142,7 +146,7 @@
 				</div>
 
 				<div class="footer-info">
-					<strong class="leach">Давайте дружить, это выгодно!</strong>
+					<div class="frendly">Давайте дружить, это выгодно!</div>
 					<p>Скидка 10% для друзей из социальных сетей.</p>
 				</div>
 			</div>
