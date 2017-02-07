@@ -17,8 +17,10 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 	font-family: "roboto";
 	font-style: normal;
 
-	src: url("../fonts/roboto.woff") format("woff"),
-		   url("../fonts/roboto.woff2") format("woff2");
+	src:  local("Roboto regular"),
+        url("../fonts/roboto.woff2") format("woff2"),
+        url("../fonts/roboto.woff") format("woff");
+  unicode-range: U+0020-007E, U+0410-044F;
 }
 
 * {
@@ -43,13 +45,11 @@ h1 {
   width: 1160px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 20px;
-  padding-left: 20px;
 }
 
 @mixin btn {
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -75,26 +75,36 @@ h1 {
   .logo {
     float: left;
     padding-right: 20px;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   .user-cart {
     position: relative;
     float: right;
-    width: 80px;
-    padding-left: 60px;
 
     text-align: right;
+    a {
+      padding-left: 38px;
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 30px;
-      left: 20px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 32px;
+        left: 0px;
 
-      width: 15px;
-      height: 15px;
+        width: 15px;
+        height: 15px;
 
-      background: url("../img/cart-icon.png");
+        background-image: url("../img/cart-icon.png");
+      }
+    }
+    .active {
+      color: #fb565a;
     }
   }
 
@@ -103,15 +113,23 @@ h1 {
   }
 
   ul {
+    display: -webkit-flex;
+    display:    -moz-flex;
+    display:     -ms-flex;
+    display:      -o-flex;
+    display:         flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 840px;
     margin: 0;
     padding: 0;
-
-    font-size: 0;
+    padding-left: 180px;
+    padding-right: 220px;
   }
 
+
   li {
-    display: inline-block;
-    margin-right: 50px;
+    list-style: none;
   }
 
   a {
@@ -122,11 +140,20 @@ h1 {
     line-height: 80px;
     text-transform: uppercase;
     text-decoration: none;
+
+    &:hover {
+      color: #fb565a;
+    }
+
+    &:active {
+      color: #000;
+      opacity: 0.3;
+    }
   }
 
   
   .active {
-    padding-bottom: 7px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #fb565a;
   }
 
@@ -145,8 +172,8 @@ h1 {
   background-color: #eee;
   h1 {
     margin: 0;
-    padding-top: 100px;
-    padding-bottom: 140px;
+    padding-top: 64px;
+    padding-bottom: 107px;
     text-align: center;
     font-size: 55px;
   }
@@ -180,7 +207,7 @@ h1 {
   &-right {
     float: right;
     width: 800px;
-    padding-left: 20px;
+    padding-left: 80px;
   }
   fieldset {
     border: none;
@@ -189,12 +216,34 @@ h1 {
     padding: 0;
   }
   legend {
-    position: relative;
-    left: -10px;
     font-weight: bold;
     font-size: 18px;
     font-family: roboto;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
+    cursor: default;
+  }
+  input[type="submit"] {
+    text-transform: uppercase;
+    color: #000;
+    font-family: "roboto", fantasy;
+    font-weight: bold;
+    padding: 15px 70px;
+    border-radius: 4px;
+    border: none;
+    background-color: #eeeeee;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background-color: #dfdfdf;
+
+    }
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0 3px 0 1px #bfbfbf;
+      outline: none;
+      background-color: #d5d5d5;
+    }
   }
   .item {
     width: 360px;
@@ -203,6 +252,7 @@ h1 {
     float: left;
   }
   &-sort {
+
     &:after {
       content: "";
       display: table;
@@ -225,7 +275,33 @@ h1 {
       font-size: 14px;
       text-decoration: none;
       text-transform: uppercase;
+      opacity: 0.3;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:active,
+      &:focus {
+        opacity: 1;
+      }
     }
+  }
+  .sort-up {
+    position: relative;
+    top: -10px;
+    font-size: 0;
+    border: 10px solid transparent;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-bottom-color: #000;
+  }
+  .sort-dw {
+    position: relative;
+    top: 0;
+    font-size: 0;
+    border: 10px solid transparent;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-color: #000;
   }
 }
 
@@ -242,11 +318,28 @@ h1 {
   margin: 0;
   font-size: 0;
   li {
-    margin: 10px;
+    margin-right: 10px;
     display: inline-block;
   }
   a {
+    display: inline-block;
+    padding: 14px 21px;
+    padding-top: 18px;
     font-size: 16px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+    text-decoration: none;
+    box-sizing: border-box;
+    &:hover {
+      background-color: #dfdfdf;
+    }
+  }
+  .active {
+    border: 2px solid #dbdbdb;
+    background-color: #fff;
+    padding: 12px 19px;
+    padding-top: 16px;
+    cursor: default;
   }
 }
 
@@ -270,20 +363,20 @@ h1 {
   &-info {
     float: left;
     width: 380px;
-    margin-top: 80px;
-    padding-right: 20px;
+    margin-top: 62px;
   }
 
   &-desc {
     margin-top: 0;
     margin-bottom: 20px;
+    line-height: 24px;
 
     color: #283136;
   }
 
   .lead {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 26px;
 
     font-weight: bold;
     font-size: 55px;
@@ -292,17 +385,31 @@ h1 {
 
   .btn {
     display: inline-block;
-    padding: 15px 50px;
+    padding: 15px 54px;
+    margin-top: 20px;
 
     background-color: #fb565a;
     border-radius: 3px;
 
     @include btn;
+    &:hover {
+      background-color: #e74246;
+    }
+    &:active {
+      background-color: #d7373b;
+      box-shadow: inset 0 3px 0 1px #c13135;
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
 
   &-images {
     float: right;
-    width: 760px;
+    width: 730px;
+    font-size: 0;
+    padding-top: 2px;
+  }
+  &-controls {
+    display: none;
   }
 }
 
@@ -320,7 +427,7 @@ h1 {
   .wrapper {
     padding-bottom: 80px;
 
-    border-bottom: 2px solid #eeeeee;
+    border-bottom: 2px solid #eee;
 
     @include wrapper;
 
@@ -342,13 +449,16 @@ h1 {
   }
 
   &-title {
+    margin-bottom: 11px;
+
     font-size: 24px;
-    line-height: 30px;
+    line-height: 40px;
     text-transform: uppercase;
   }
 
   &-desc {
     margin-bottom: 20px;
+    margin-right: 20px;
 
     font-size: 16px;
     line-height: 24px;
@@ -357,8 +467,8 @@ h1 {
   
   .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 17px 40px;
+    margin-top: 12px;
+    padding: 16px 40px;
 
     font-size: 16px;
 
@@ -366,13 +476,37 @@ h1 {
 
     @include btn;
     &-red {
-      background: #fb565a;
+      background-color: #fb565a;
+      &:hover {
+        background-color: #e74246;
+      }
+      &:active {
+        background-color: #d7373b;
+        box-shadow: inset 0 3px 0 1px #c13135;
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
     &-green {
-      background: #00ca74;
+      background-color: #00ca74;
+      &:hover {
+        background-color: #00bc6c;
+      }
+      &:active {
+        background-color: #00aa62;
+        box-shadow: inset 0 3px 0 1px #009958;
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
     &-yellow {
-      background: #efc84a;
+      background-color: #efc84a;
+      &:hover {
+        background-color: #eab534;
+      }
+      &:active {
+        background-color: #e5a722;
+        box-shadow: inset 0 3px 0 1px #ce961f;
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
   }
 }
@@ -388,7 +522,7 @@ h1 {
   padding-top: 40px;
   .wrapper {
     @include wrapper;
-    padding-bottom: 40px;
+    padding-bottom: 45px;
     border-bottom: 2px solid #eee;
     &:after {
       @include clearfix;
@@ -406,19 +540,19 @@ h1 {
     padding-right: 20px;
 
     ul {
-    margin-top: 35px;
+    margin-top: 30px;
     padding-left: 35px;
 
     list-style: none;
     }
     li {
       position: relative;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       &:before {
         content: "";
         position: absolute;
-        left: -33px;
-        top: 7px;;
+        left: -35px;
+        top: 7px;
 
         width: 25px;
         height: 2px;
@@ -440,7 +574,7 @@ h1 {
     li {
       display: inline-block;
       width: 100px;
-      padding-right: 20px;
+      padding-right: 15px;
       list-style: none;
       &:last-child {
         padding-right: 0;
@@ -454,7 +588,7 @@ h1 {
         content: "%";
         position: absolute;
         right: -20px;
-        top: 7px;
+        top: 5px;
         font-size: 24px;
         font-weight: bold;
       }
@@ -468,11 +602,11 @@ h1 {
   }
 
   img {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   &-counters {
-    margin-bottom: 50px;
+    margin-bottom: 41px;
 
     font-weight: bold;
     text-align: center;
@@ -480,8 +614,8 @@ h1 {
   }
 
   .lead {
-    margin-top: 40px;
-    margin-bottom: 45px;
+    margin-top: 35px;
+    margin-bottom: 33px;
 
     font-weight: bold;
     font-size: 45px;
@@ -489,7 +623,7 @@ h1 {
   }
   
   .desc {
-    margin-bottom: 30px;
+    margin-bottom: 42px;
     font-size: 16px;
     line-height: 24px;
     color: #283136;
@@ -506,8 +640,8 @@ h1 {
 .clients {
   .wrapper {
     @include wrapper;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 47px;
+    padding-bottom: 39px;
     border-bottom: 2px solid #eee;
     display: -webkit-flex;
     display: -moz-flex;
@@ -522,10 +656,65 @@ h1 {
     &:hover {
       opacity: 1;
     }
+    &:active {
+      opacity: 0.1;
+    }
   }
 }
 
 /*=====  End of clients  ======*/
+
+
+/*===========================
+=            map            =
+===========================*/
+
+.map {
+  position: relative;
+  margin-top: 80px;
+  min-height: 415px;
+  background-color: #333;
+  .wrapper {
+    @include wrapper;
+  }
+  &-block {
+    position: absolute;
+    top: 53px;
+    z-index: 99;
+    width: 318px;
+    padding: 40px 50px;
+    padding-bottom: 50px;
+    background-color: #FFF;
+    box-sizing: border-box;
+  }
+  h2 {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 18px 44px;
+    padding-bottom: 14px;
+    margin-top: 22px;
+
+    background-color: #fb565a;
+    border-radius: 3px;
+
+    @include btn;
+    &:hover {
+      background-color: #e74246;
+    }
+    &:active {
+      background-color: #d7373b;
+      box-shadow: inset 0 3px 0 1px #c13135;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+/*=====  End of map  ======*/
+
+
 
 
 /*==============================
@@ -536,18 +725,39 @@ h1 {
   .wrapper {
     @include wrapper;
     padding-bottom: 40px;
-    border-bottom: 2px solid #eee;
+    margin-top: 70px;
     &:after {
       @include clearfix;
     }
   }
   &-item {
     float: left;
-    width: 260px;
+    width: 320px;
+    font-size: 0;
+    .social-icon {
+      display: inline-block;
+      vertical-align: top;
+      width: 79px;
+      height: 79px;
+      background-color: #e1e1e1;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    img {
+      display: flex;
+      align-items: center;
+    }
   }
   &-info {
     float: right;
     width: 760px;
+  }
+
+  .frendly {
+    font-weight: bold;
+    font-size: 36px;
+    padding-top: 8px;
+    line-height: 30px;
   }
 }
 
