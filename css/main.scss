@@ -75,26 +75,36 @@ h1 {
   .logo {
     float: left;
     padding-right: 20px;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   .user-cart {
     position: relative;
     float: right;
-    width: 80px;
-    padding-left: 60px;
 
     text-align: right;
+    a {
+      padding-left: 38px;
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 32px;
-      left: 24px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 32px;
+        left: 0px;
 
-      width: 15px;
-      height: 15px;
+        width: 15px;
+        height: 15px;
 
-      background: url("../img/cart-icon.png");
+        background-image: url("../img/cart-icon.png");
+      }
+    }
+    .active {
+      color: #fb565a;
     }
   }
 
@@ -130,6 +140,15 @@ h1 {
     line-height: 80px;
     text-transform: uppercase;
     text-decoration: none;
+
+    &:hover {
+      color: #fb565a;
+    }
+
+    &:active {
+      color: #000;
+      opacity: 0.3;
+    }
   }
 
   
@@ -202,6 +221,29 @@ h1 {
     font-family: roboto;
     letter-spacing: 0.8px;
     text-transform: uppercase;
+    cursor: default;
+  }
+  input[type="submit"] {
+    text-transform: uppercase;
+    color: #000;
+    font-family: "roboto", fantasy;
+    font-weight: bold;
+    padding: 15px 70px;
+    border-radius: 4px;
+    border: none;
+    background-color: #eeeeee;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background-color: #dfdfdf;
+
+    }
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0 3px 0 1px #bfbfbf;
+      outline: none;
+      background-color: #d5d5d5;
+    }
   }
   .item {
     width: 360px;
@@ -210,6 +252,7 @@ h1 {
     float: left;
   }
   &-sort {
+
     &:after {
       content: "";
       display: table;
@@ -232,6 +275,14 @@ h1 {
       font-size: 14px;
       text-decoration: none;
       text-transform: uppercase;
+      opacity: 0.3;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:active,
+      &:focus {
+        opacity: 1;
+      }
     }
   }
   .sort-up {
@@ -241,7 +292,7 @@ h1 {
     border: 10px solid transparent;
     border-left-width: 5px;
     border-right-width: 5px;
-    border-bottom-color: red;
+    border-bottom-color: #000;
   }
   .sort-dw {
     position: relative;
@@ -250,7 +301,7 @@ h1 {
     border: 10px solid transparent;
     border-left-width: 5px;
     border-right-width: 5px;
-    border-top-color: red;
+    border-top-color: #000;
   }
 }
 
@@ -267,11 +318,28 @@ h1 {
   margin: 0;
   font-size: 0;
   li {
-    margin: 10px;
+    margin-right: 10px;
     display: inline-block;
   }
   a {
+    display: inline-block;
+    padding: 14px 21px;
+    padding-top: 18px;
     font-size: 16px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+    text-decoration: none;
+    box-sizing: border-box;
+    &:hover {
+      background-color: #dfdfdf;
+    }
+  }
+  .active {
+    border: 2px solid #dbdbdb;
+    background-color: #fff;
+    padding: 12px 19px;
+    padding-top: 16px;
+    cursor: default;
   }
 }
 
@@ -324,6 +392,14 @@ h1 {
     border-radius: 3px;
 
     @include btn;
+    &:hover {
+      background-color: #e74246;
+    }
+    &:active {
+      background-color: #d7373b;
+      box-shadow: inset 0 3px 0 1px #c13135;
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
 
   &-images {
@@ -400,13 +476,37 @@ h1 {
 
     @include btn;
     &-red {
-      background: #fb565a;
+      background-color: #fb565a;
+      &:hover {
+        background-color: #e74246;
+      }
+      &:active {
+        background-color: #d7373b;
+        box-shadow: inset 0 3px 0 1px #c13135;
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
     &-green {
-      background: #00ca74;
+      background-color: #00ca74;
+      &:hover {
+        background-color: #00bc6c;
+      }
+      &:active {
+        background-color: #00aa62;
+        box-shadow: inset 0 3px 0 1px #009958;
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
     &-yellow {
-      background: #efc84a;
+      background-color: #efc84a;
+      &:hover {
+        background-color: #eab534;
+      }
+      &:active {
+        background-color: #e5a722;
+        box-shadow: inset 0 3px 0 1px #ce961f;
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
   }
 }
@@ -556,6 +656,9 @@ h1 {
     &:hover {
       opacity: 1;
     }
+    &:active {
+      opacity: 0.1;
+    }
   }
 }
 
@@ -598,6 +701,14 @@ h1 {
     border-radius: 3px;
 
     @include btn;
+    &:hover {
+      background-color: #e74246;
+    }
+    &:active {
+      background-color: #d7373b;
+      box-shadow: inset 0 3px 0 1px #c13135;
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
 }
 
@@ -623,20 +734,18 @@ h1 {
     float: left;
     width: 320px;
     font-size: 0;
-    ul {
-      padding: 0;
-    }
-    li {
+    .social-icon {
       display: inline-block;
-      vertical-align: middle;
-      width: 77px;
-      height: 77px;
-      margin-right: 15px;
+      vertical-align: top;
+      width: 79px;
+      height: 79px;
       background-color: #e1e1e1;
       border-radius: 50%;
+      margin-right: 20px;
     }
     img {
-      text-align: center;
+      display: flex;
+      align-items: center;
     }
   }
   &-info {
