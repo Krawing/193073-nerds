@@ -20,7 +20,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 	src:  local("Roboto regular"),
         url("../fonts/roboto.woff2") format("woff2"),
         url("../fonts/roboto.woff") format("woff");
-  unicode-range: U+0020-007E, U+0410-044F;
+  // unicode-range: U+0020-007E, U+0410-044F;
 }
 
 * {
@@ -572,12 +572,13 @@ h1 {
     ul {
       margin: 0;
       padding-left: 0;
+      font-size: 0;
     }
 
     li {
       display: inline-block;
       width: 100px;
-      padding-right: 15px;
+      padding-right: 19px;
       list-style: none;
       &:last-child {
         padding-right: 0;
@@ -744,7 +745,7 @@ h1 {
       height: 79px;
       background-color: #e1e1e1;
       border-radius: 50%;
-      margin-right: 20px;
+      margin-right: 10px;
     }
     img {
       display: flex;

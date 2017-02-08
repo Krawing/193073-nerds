@@ -217,7 +217,6 @@ template {
   font-family: "roboto";
   font-style: normal;
   src: local("Roboto regular"), url("../fonts/roboto.woff2") format("woff2"), url("../fonts/roboto.woff") format("woff");
-  unicode-range: U+0020-007E, U+0410-044F;
 }
 * {
   font-family: "roboto", fantasy;
@@ -700,11 +699,12 @@ h1 {
 .about-right ul {
   margin: 0;
   padding-left: 0;
+  font-size: 0;
 }
 .about-right li {
   display: inline-block;
   width: 100px;
-  padding-right: 15px;
+  padding-right: 19px;
   list-style: none;
 }
 .about-right li:last-child {
@@ -864,7 +864,7 @@ h1 {
   height: 79px;
   background-color: #e1e1e1;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .footer-item img {
   display: -webkit-box;
