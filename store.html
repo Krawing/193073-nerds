@@ -32,29 +32,53 @@
 					<form action="post.php" method="get">
 						<fieldset class="range-filter">	
 							<legend>Стоимость:</legend>
-								<div class="range-controls">
-									<div class="scale"><div style="margin-left:50px;width:100px;" class="bar"></div></div>
-									<div class="toggle min-toggle"></div>
-									<div class="toggle max-toggle"></div>
-								</div>
-								<div class="price-controls">
-									от <input class="min-price" type="text" value="5 000">
-									до <input class="max-price" type="text" value="15 000">
-				       			</div>
+							<div class="range-controls">
+								<div class="scale"><div style="margin-left:50px;width:100px;" class="bar"></div></div>
+								<div class="toggle min-toggle"></div>
+								<div class="toggle max-toggle"></div>
+							</div>
+							<div class="price-controls">
+								от <input class="min-price" type="text" value="5 000">
+								до <input class="max-price" type="text" value="15 000">
+			       			</div>
 						</fieldset>
 						<fieldset>
-						<legend>Сетка:</legend>
-							<p><input type="radio" name="grid" id="adaptive"><label for="adaptive">Адаптивная</label></p>
-							<p><input type="radio" name="grid" id="grid"><label for="grid">Фиксированая</label></p>
-							<p><input type="radio" name="grid" id="rubber"><label for="rubber">Резиновая</label></p>
+							<legend>Сетка:</legend>
+							<p>
+								<input type="radio" name="grid" id="adaptive">
+								<label for="adaptive">Адаптивная</label>
+							</p>
+							<p>
+								<input type="radio" name="grid" id="grid">
+								<label for="grid">Фиксированая</label>
+							</p>
+							<p>
+								<input type="radio" name="grid" id="rubber">
+								<label for="rubber">Резиновая</label>
+							</p>
 						</fieldset>
 						<fieldset>
 							<legend>Особенности:</legend>
-							<p><input type="checkbox" id="slider"><label for="slider">Слайдер</label></p>
-							<p><input type="checkbox" id="block"><label for="block">Блок преимуществ</label></p>
-							<p><input type="checkbox" id="add-news"><label for="add-news">Новости</label></p>
-							<p><input type="checkbox" id="add-gallery"><label for="add-gallery">Галерея</label></p>
-							<p><input type="checkbox" id="add-cart"><label for="add-cart">Корзина</label></p>
+							<p>
+								<input type="checkbox" id="slider">
+								<label for="slider">Слайдер</label>
+							</p>
+							<p>
+								<input type="checkbox" id="block">
+								<label for="block">Блок преимуществ</label>
+							</p>
+							<p>
+								<input type="checkbox" id="add-news">
+								<label for="add-news">Новости</label>
+							</p>
+							<p>
+								<input type="checkbox" id="add-gallery">
+								<label for="add-gallery">Галерея</label>
+							</p>
+							<p>
+								<input type="checkbox" id="add-cart">
+								<label for="add-cart">Корзина</label>
+							</p>
 						<input type="submit" value="Показать">
 					</form>
 				</aside>
@@ -138,11 +162,9 @@
 		<footer class="footer">
 			<div class="wrapper">
 				<div class="footer-item">
-					<ul>
-						<li><a href="#"><img src="img/social/vk-icon.gif" alt="VK"></a></li>
-						<li><a href="#"><img src="img/social/fb-icon.gif" alt="Facebook"></a></li>
-						<li><a href="#"><img src="img/social/insta-icon.gif" alt="Instagram"></a></li>
-					</ul>
+					<a href="#" class="social-icon social-vk"><img src="img/social/vk-icon.gif" alt="VK"></a>
+					<a href="#" class="social-icon social-fb"><img src="img/social/fb-icon.gif" alt="Facebook"></a>
+					<a href="#" class="social-icon social-ins"><img src="img/social/insta-icon.gif" alt="Instagram"></a>
 				</div>
 
 				<div class="footer-info">
@@ -151,6 +173,29 @@
 				</div>
 			</div>
 		</footer>
+
+		<div class="modal" style="display: none;">
+			<button class="modal-close">Закрыть</button>
+			<h2 class="modal-title">Напишите нам</h2>
+			<form action="" method="post">
+				<label for="name">
+					<span class="modal-name">Ваше имя:</span>
+					<input type="text" id="name" placeholder="Представьтесь, пожалуйста">
+				</label>
+				
+				<label for="email">
+					<span class="modal-name">Ваш e-mail</span>
+					<input type="email" id="email" placeholder="Для отправки ответа">
+				</label>
+
+				<label for="text">
+					<span class="modal-name">Текст письма:</span>
+					<textarea  id="text" width="100%" placeholder="В свободной форме"></textarea>
+				</label>
+
+				<input type="submit" value="Отправить" class="btn btn-red">
+			</form>
+		</div>
 
 	</body>
 </html>

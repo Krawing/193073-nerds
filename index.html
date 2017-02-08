@@ -141,5 +141,28 @@
 			</div>
 		</footer>
 
+		<div class="modal" style="display: none;">
+			<button class="modal-close">Закрыть</button>
+			<h2 class="modal-title">Напишите нам</h2>
+			<form action="" method="post">
+				<label for="name">
+					<span class="modal-name">Ваше имя:</span>
+					<input type="text" id="name" placeholder="Представьтесь, пожалуйста">
+				</label>
+				
+				<label for="email">
+					<span class="modal-name">Ваш e-mail</span>
+					<input type="email" id="email" placeholder="Для отправки ответа">
+				</label>
+
+				<label for="text">
+					<span class="modal-name">Текст письма:</span>
+					<textarea  id="text" width="100%" placeholder="В свободной форме"></textarea>
+				</label>
+
+				<input type="submit" value="Отправить" class="btn btn-red">
+			</form>
+		</div>
+
 	</body>
 </html>

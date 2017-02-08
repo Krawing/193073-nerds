@@ -340,6 +340,9 @@ h1 {
     padding: 12px 19px;
     padding-top: 16px;
     cursor: default;
+    &:hover {
+      background-color: #FFF;
+    }
   }
 }
 
@@ -762,3 +765,148 @@ h1 {
 }
 
 /*=====  End of footer  ======*/
+
+
+/*=============================
+=            modal            =
+=============================*/
+
+.modal {
+  position: relative;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  z-index: 999;
+
+  box-sizing: border-box;
+  width: 960px;
+  min-height: 590px;
+  margin-left: -480px;
+  padding: 100px;
+  padding-top: 64px;
+  padding-bottom: 90px;
+
+  font-size: 0;
+
+  background: #ffffff;
+  box-shadow: 0 10px 40px 5px #333;
+  &-close {
+    position: absolute;
+    top: 79px;
+    right: 91px;
+
+    width: 22px;
+    height: 22px;
+
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+
+      width: 25px;
+      height: 4px;
+      background-color: #fb565a;
+    }
+    &:after {
+      transform: rotate(45deg);
+    }
+    &:before {
+      transform: rotate(-45deg);
+    }
+  }
+  &-title {
+    margin-top: 0;
+    margin-bottom: 38px;
+
+    font-size: 45px;
+  }
+  &-name {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 9px;
+  }
+  label[for="name"] {
+    float: left;
+    width: 50%;
+    margin-right: 20px;
+    width: 360px;
+    box-sizing: border-box;
+  }
+  label[for="email"] {
+    float: right;
+    width: 50%;
+    margin-left: 20px;
+    width: 360px;
+    box-sizing: border-box;
+  }
+  label[for="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 35px;
+  }
+  input[type="submit"] {
+    width: auto;
+    padding: 16px 82px;
+    height: auto;
+    margin-top: 48px;
+  }
+  label {
+    display: inline-block;
+  }
+  input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 13px;
+
+  font-size: 16px;
+
+  border: 2px solid #d7dcde;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 118px;
+    padding: 10px;
+    padding-left: 13px;
+
+    font-size: 16px;
+
+    border: 2px solid #d7dcde;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  .btn {
+    @include btn;
+    border: 0;
+    border-radius: 4px;
+    &-red {
+      background-color: #fb565a;
+      &:hover {
+        background-color: #e74246;
+      }
+      &:active {
+        background-color: #d7373b;
+        box-shadow: inset 0 3px 0 1px #c13135;
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+/*=====  End of modal  ======*/
