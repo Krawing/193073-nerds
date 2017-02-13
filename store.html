@@ -15,7 +15,7 @@
 						<li><a href="index.html#about">Студия</a></li>
 						<li><a href="index.html#clients">Клиенты</a></li>
 						<li><a class="active">Магазин</a></li>
-						<li><a href="#">Контакты</a></li>
+						<li><a class="modal-open" href="#">Контакты</a></li>
 					</ul>
 				</nav>
 				<div class="user-cart"><a href="#">Корзина</a></div>
@@ -99,7 +99,7 @@
 							<div class="item-info">
 								<h2 class="item-title">Sedona</h2>
 								<p class="item-desc">Информационный сайт для туристов</p>
-								<a href="#" class="btn btn-red">9 900 руб.</a>
+								<a href="#modal" class="btn btn-red modal-open">9 900 руб.</a>
 							</div>
 						</div>
 
@@ -108,7 +108,7 @@
 							<div class="item-info">
 								<h2 class="item-title">Pink</h2>
 								<p class="item-desc">Информационный сайт для мобилок</p>
-								<a href="#" class="btn btn-red">7 800 руб.</a>
+								<a href="#modal" class="btn btn-red modal-open">7 800 руб.</a>
 							</div>
 						</div>
 
@@ -117,7 +117,7 @@
 							<div class="item-info">
 								<h2 class="item-title">Barbershop</h2>
 								<p class="item-desc">Информационный сайт для мобилок</p>
-								<a href="#" class="btn btn-red">7 800 руб.</a>
+								<a href="#modal" class="btn btn-red modal-open">7 800 руб.</a>
 							</div>
 						</div>
 
@@ -126,7 +126,7 @@
 							<div class="item-info">
 								<h2 class="item-title">Mishka</h2>
 								<p class="item-desc">Информационный сайт для мобилок</p>
-								<a href="#" class="btn btn-red">7 800 руб.</a>
+								<a href="#modal" class="btn btn-red modal-open">7 800 руб.</a>
 							</div>
 						</div>
 
@@ -135,7 +135,7 @@
 							<div class="item-info">
 								<h2 class="item-title">Aplus</h2>
 								<p class="item-desc">Информационный сайт для мобилок</p>
-								<a href="#" class="btn btn-red">7 800 руб.</a>
+								<a href="#modal" class="btn btn-red modal-open">7 800 руб.</a>
 							</div>
 						</div>
 
@@ -144,7 +144,7 @@
 							<div class="item-info">
 								<h2 class="item-title">Kvas</h2>
 								<p class="item-desc">Информационный сайт для мобилок</p>
-								<a href="#" class="btn btn-red">7 800 руб.</a>
+								<a href="#modal" class="btn btn-red modal-open">7 800 руб.</a>
 							</div>
 						</div>
 
@@ -193,7 +193,7 @@
 			</div>
 		</footer>
 
-		<div class="modal" style="display: none;">
+		<div class="modal modal-hide">
 			<button class="modal-close">Закрыть</button>
 			<h2 class="modal-title">Напишите нам</h2>
 			<form action="" method="post">
@@ -215,6 +215,21 @@
 				<input type="submit" value="Отправить" class="btn btn-red">
 			</form>
 		</div>
+		
+		<script>
+			var modal = document.querySelector(".modal-open");
+			var modalClose = document.querySelector(".modal-close")
+			var popup = document.querySelector(".modal");
 
+			modal.addEventListener("click", function(){
+				event.preventDefault();
+				modal.classList.add("active");
+				popup.classList.add("modal-show");
+			});
+			modalClose.addEventListener("click", function(){
+				popup.classList.remove("modal-show");
+				modal.classList.remove("active");
+			});
+		</script>
 	</body>
 </html>

@@ -15,7 +15,7 @@
 						<li><a href="#about">Студия</a></li>
 						<li><a href="#clients">Клиенты</a></li>
 						<li><a href="store.html#store-index">Магазин</a></li>
-						<li><a href="#">Контакты</a></li>
+						<li><a class="modal-open" href="#">Контакты</a></li>
 					</ul>
 				</nav>
 				<div class="user-cart"><a href="#">Корзина</a></div>
@@ -56,19 +56,19 @@
 					<img src="img/illustration-1.jpg" alt="Веб-сайты" width="300" height="146">
 					<h2 class="features-title">Веб-сайты</h2>
 					<div class="features-desc">Мир никогда не будет прежним после того как увидит ваш сайт!</div>
-					<a href="#" class="btn btn-red">Заказать</a>
+					<a href="#" class="btn btn-red modal-open">Заказать</a>
 				</div>
 				<div class="features-item">
 					<img src="img/illustration-2.jpg" alt="">
 					<h2 class="features-title">Приложения</h2>
 					<div class="features-desc">Покорите топ-10 приложений в AppStore и Google Play</div>
-					<a href="#" class="btn btn-green">Заказать</a>
+					<a href="#" class="btn btn-green modal-open">Заказать</a>
 				</div>
 				<div class="features-item">
 					<img src="img/illustration-3.jpg" alt="">
 					<h2 class="features-title">Презентации</h2>
 					<div class="features-desc">Вы даже не подозреваете, насколько вы изумительны!</div>
-					<a href="#" class="btn btn-yellow">Заказать</a>
+					<a href="#" class="btn btn-yellow modal-open">Заказать</a>
 				</div>
 			</div>
 		</section>
@@ -131,7 +131,7 @@
 					<p>
 						тел. +7 (812) 275-75-75 
 					</p>
-					<a href="#" class="btn">Напишите нам</a>
+					<a href="#" class="btn modal-open">Напишите нам</a>
 				</div>
 			</div>
 			<div class="map-image">
@@ -154,7 +154,7 @@
 			</div>
 		</footer>
 
-		<div class="modal" style="display: none;">
+		<div class="modal modal-hide">
 			<button class="modal-close">Закрыть</button>
 			<h2 class="modal-title">Напишите нам</h2>
 			<form action="" method="post">
@@ -176,6 +176,22 @@
 				<input type="submit" value="Отправить" class="btn btn-red">
 			</form>
 		</div>
+
+		<script>
+			var modal = document.querySelector(".modal-open");
+			var modalClose = document.querySelector(".modal-close")
+			var popup = document.querySelector(".modal");
+
+			modal.addEventListener("click", function(){
+				event.preventDefault();
+				modal.classList.add("active");
+				popup.classList.add("modal-show");
+			});
+			modalClose.addEventListener("click", function(){
+				popup.classList.remove("modal-show");
+				modal.classList.remove("active");
+			});
+		</script>
 
 	</body>
 </html>

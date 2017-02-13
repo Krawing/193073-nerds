@@ -1036,6 +1036,7 @@ h1 {
 =============================*/
 
 .modal {
+  display: none;
   position: relative;
   position: fixed;
   top: 50px;
@@ -1054,6 +1055,9 @@ h1 {
 
   background: #ffffff;
   box-shadow: 0 10px 40px 5px #333;
+  &-show {
+    display: block;
+  }
   &-close {
     position: absolute;
     top: 79px;
