@@ -23,6 +23,7 @@ modalForm.addEventListener("submit", function(event){
 	if (!modalUser.value || !modalEmail.value || !modalText.value) {
 		event.preventDefault();
 		modalPopup.classListAdd("modal-error");
+		console.log("Что то не заполнено");
 	}
 });
 modalOverlay.addEventListener("click", function(event) {
